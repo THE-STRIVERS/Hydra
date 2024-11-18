@@ -8,6 +8,7 @@ body {
     overflow: hidden;
     margin: 0;
 }
+
 /* Navbar Styling */
 .navbar {
     position: fixed;
@@ -20,6 +21,7 @@ body {
     align-items: center;
     z-index: 2; /* Ensure navbar is above star animation */
     background: rgba(0, 0, 0, 0.6);
+
 }
 
 /* Logo Styling */
@@ -44,25 +46,30 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    padding-top: 80px; /* To avoid overlap with navbar */
+    padding-top: 50px; /* To avoid overlap with navbar */
     z-index: 2;
 }
 
-/* Content Styling */
+/* Hero section content animation */
 .hero-section .content {
-    flex: 1;
-    padding-right: 20px;
-    color: #fff;
+    
+    color: whitesmoke;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
 }
 
-.hero-section h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.hero-section p {
-    font-size: 18px;
-    margin-bottom: 20px;
+/* Keyframe animation for fadeInUp */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Image Styling */
@@ -78,6 +85,51 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     
+}
+
+.hero-section .right-image img {
+    background-color: #000000;
+    
+    box-shadow: 0px 0px 3px 0px #AAA;
+    -moz-box-shadow: 0px 0px 5px 0px #AAA;
+    -webkit-box-shadow: 0px 0px 5px 0px #AAA;
+    transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+
+.hero-section .right-image img:hover {
+    box-shadow: 1px 1px 1px 0px #999,
+        2px 2px 1px 0px #888,
+        3px 3px 1px 0px #777,
+        4px 4px 1px 0px #666,
+        5px 5px 1px 0px #555,
+        6px 6px 1px 0px #444,
+        7px 7px 1px 0px #333,
+        8px 8px 3px 0px #303030;
+    -moz-box-shadow: 1px 1px 1px 0px #999,
+        2px 2px 1px 0px #888,
+        3px 3px 1px 0px #777,
+        4px 4px 1px 0px #666,
+        5px 5px 1px 0px #555,
+        6px 6px 1px 0px #444,
+        7px 7px 1px 0px #333,
+        8px 8px 3px 0px #303030;
+    -webkit-box-shadow: 1px 1px 1px 0px #999,
+        2px 2px 1px 0px #888,
+        3px 3px 1px 0px #777,
+        4px 4px 1px 0px #666,
+        5px 5px 1px 0px #555,
+        6px 6px 1px 0px #444,
+        7px 7px 1px 0px #333,
+        8px 8px 3px 0px #303030;
+    transform: translate(-8px,-8px);
+    -ms-transform: translate(-8px,-8px);
+    -moz-transform: translate(-8px,-8px);
+    -webkit-transform: translate(-8px,-8px);
+    -o-transform: translate(-8px,-8px);
 }
 
 /* Get Started Button */
