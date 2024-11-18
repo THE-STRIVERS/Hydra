@@ -1,13 +1,13 @@
 /* Body and Background Styling */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
-    overflow: hidden;
     margin: 0;
+    overflow-x: hidden;  /* Prevent horizontal scroll */
+    display: block;  /* Allow normal flow of content */
+    min-height: 100%;  /* Ensure body takes the full height */
+    padding-top: 100px; /* Add top padding to prevent navbar overlap */
 }
+
 
 /* Navbar Styling */
 .navbar {
@@ -42,96 +42,70 @@ body {
 .hero-section {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    padding-top: 50px; /* To avoid overlap with navbar */
+    padding-top: 1px; /* To avoid overlap with navbar */
     z-index: 2;
-}
-
-/* Hero section content animation */
-.hero-section .content {
-    
+    gap: 20px;
+  }
+  
+  /* Hero Section Text Content */
+  .hero-section .content {
     color: whitesmoke;
     max-width: 600px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Keyframe animation for fadeInUp */
-@keyframes fadeInUp {
+    opacity: 0; /* Start invisible */
+    transform: translateX(-30px); /* Start slightly to the left */
+    animation: fadeInLeft 1s ease-out forwards;
+  }
+  
+  /* Text Animation */
+  @keyframes fadeInLeft {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+      opacity: 0;
+      transform: translateX(-30px); /* Initial position off-screen */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateX(0); /* Final position */
     }
-}
-
-/* Image Styling */
-.hero-section .right-image {
+  }
+  
+  /* Hero Section Image */
+  .hero-section .right-image {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-}
-
-.hero-section .right-image img {
+    order: 2; /* Default: Image appears on the right */
+  }
+  
+  .hero-section .right-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    
-}
-
-.hero-section .right-image img {
-    background-color: #000000;
-    
-    box-shadow: 0px 0px 3px 0px #AAA;
-    -moz-box-shadow: 0px 0px 5px 0px #AAA;
-    -webkit-box-shadow: 0px 0px 5px 0px #AAA;
-    transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-    -webkit-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-}
-
-.hero-section .right-image img:hover {
-    box-shadow: 1px 1px 1px 0px #999,
-        2px 2px 1px 0px #888,
-        3px 3px 1px 0px #777,
-        4px 4px 1px 0px #666,
-        5px 5px 1px 0px #555,
-        6px 6px 1px 0px #444,
-        7px 7px 1px 0px #333,
-        8px 8px 3px 0px #303030;
-    -moz-box-shadow: 1px 1px 1px 0px #999,
-        2px 2px 1px 0px #888,
-        3px 3px 1px 0px #777,
-        4px 4px 1px 0px #666,
-        5px 5px 1px 0px #555,
-        6px 6px 1px 0px #444,
-        7px 7px 1px 0px #333,
-        8px 8px 3px 0px #303030;
-    -webkit-box-shadow: 1px 1px 1px 0px #999,
-        2px 2px 1px 0px #888,
-        3px 3px 1px 0px #777,
-        4px 4px 1px 0px #666,
-        5px 5px 1px 0px #555,
-        6px 6px 1px 0px #444,
-        7px 7px 1px 0px #333,
-        8px 8px 3px 0px #303030;
-    transform: translate(-8px,-8px);
-    -ms-transform: translate(-8px,-8px);
-    -moz-transform: translate(-8px,-8px);
-    -webkit-transform: translate(-8px,-8px);
-    -o-transform: translate(-8px,-8px);
-}
-
+    box-shadow: 0px 0px 3px 0px #aaa;
+    transition: all 0.5s ease;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column; /* Stack items vertically */
+    }
+  
+    .hero-section .right-image {
+      order: 1; /* Image moves above text */
+      justify-content: center;
+    }
+  
+    .hero-section .content {
+      order: 2; /* Text moves below image */
+      text-align: center; /* Center-align text for better appearance */
+    }
+  }
+  
 /* Get Started Button */
 .hero-section .get-started-btn {
     padding: 12px 24px;
@@ -141,12 +115,108 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px orange, 0 0 6px orange;
+    animation: neon-glow 1.5s infinite alternate;
 }
 
+/* Neon Glow Animation */
+@keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 5px orange, 0 0 6px orange, 0 0 7px orange;
+    }
+    
+}
+
+/* Hover Effect */
 .hero-section .get-started-btn:hover {
-    background-color: white ;
-    color:black;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px white, 0 0 30px white, 0 0 50px white;
+}
+/* Features Section */
+.features-section {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    justify-content: space-between; /* Spaces features evenly */
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto; /* Adds space between hero section and features */
+    padding: 20px;
+    background-color: #1b2735; /* Matches overall theme */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    gap: 20px; /* Adds spacing between feature items */
+}
+
+/* Individual Feature */
+.features-section .feature {
+    flex: 1 1 calc(33.333% - 40px); /* Ensures three features fit in a row */
+    text-align: center;
+    color: whitesmoke;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* Adds a pointer cursor for interactivity */
+}
+
+/* Hover Effect */
+.features-section .feature:hover {
+    transform: translateY(-10px); /* Creates a lift effect */
+    background-color: #555; /* Slightly lighter background color for better contrast */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 165, 0, 0.7); /* Enhanced glowing effect */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Feature Icon */
+.features-section .feature-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+    color: orange;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.features-section .feature:hover .feature-icon {
+    color: #ffcc00; /* Change icon color on hover */
+}
+
+/* Feature Headings */
+.features-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: orange;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.features-section .feature:hover h3 {
+    color: #ffcc00; /* Change heading color on hover */
+}
+
+/* Feature Paragraph */
+.features-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.features-section .feature:hover p {
+    color: #ddd; /* Slightly lighter text color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-section {
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    }
+
+    .features-section .feature {
+        flex: 1 1 100%; /* Features take full width on small screens */
+        margin-bottom: 20px; /* Adds spacing between rows */
+    }
 }
 
 /* Stars Container */
