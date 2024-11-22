@@ -3,62 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airlights Dashboard</title>
+    <title>Hydro Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="dash.css">
 </head>
 <body>
+    <!-- Sidebar -->
     <div class="sidebar">
-        <h2></h2>HYDRO SYSTEMS
+        <h2>HYDRO SYSTEMS</h2>
         <ul>
-            <li>Monitoring</li>
-            <li>Control</li>
-            <li>Hardware</li>
-            <li>Statistics</li>
-            <li>Settings</li>
+            <li><a href="dash.html">Monitoring</a></li>
+            <li><a href="#">Control</a></li>
+            <li><a href="stat.html">Statistics</a></li>
+            <li><a href="#">Records</a></li>
+            <li><a href="#">Settings</a></li>
         </ul>
         <div class="user-info">
-            <p>Ministry of jal shakti</p>
+            <p>Ministry of Jal Shakti</p>
             <p>Admin</p>
         </div>
     </div>
-    
+
+    <!-- Main Content -->
     <div class="main-content">
+        <!-- Navigation Bar -->
         <div class="header">
-            <div class="status">
-                <p>Control: TWR</p>
-                <p>Power: <span class="status-indicator"></span></p>
-                <p>05/11/2019 - 15:24 UTC</p>
+            <div class="nav">
+                <span class="status-item">Control: TWR</span>
+                <span class="status-item">Power: <span class="status-indicator"></span></span>
+                <span class="status-item">05/11/2019 - 15:24 UTC</span>
+                <div class="navbar">
+                    <button id="notification-icon" onclick="toggleNotifications()">🔔</button>
+                </div>
             </div>
-            <p>Tehri hydro electric power</p>
         </div>
 
-        <div class="dashboard">
-            <div class="info-box red-alert">
-                <p>Penstock Failure</p>
-            </div><br>
-            <div class="info-section">
-                <div class="info-box">static P - 10%</div>
-                <div class="info-box">water P - 30%</div>
-                <div class="info-box">penstock P - 3%</div>
-                <div class="info-box">Tunnel P- 1%</div>
-                
-                
-            </div>
-            <br>
-            <div class="info-section">
-                <div class="info-box"> penstock V- 10%</div>
-                <div class="info-box">Tunnel V - 30%</div>
-                <div class="info-box">Guide vane  - 3%</div>
-                <div class="info-box">Power grid - 1%</div>
-                
-                
+<!-- Notification Bar -->
+<div id="notification-bar" class="notification-bar"></div>
+        <!-- Parameter Section -->
+        <div class="parameter-section">
+            <!-- Sensor Parameters -->
+            <div class="parameter-group">
+                <h3>Sensor Parameters</h3>
+                <!-- Include Font Awesome for Icons -->
+        <div class="parameter">
+          <h4><i class="fas fa-tint"></i> Inflow Rate</h4>
+          <p id="inflow-rate">15.2 m³/s</p>
+        </div>
+        <div class="parameter">
+          <h4><i class="fas fa-arrow-alt-circle-right"></i> Outflow Rate</h4>
+          <p id="outflow-rate">13.8 m³/s</p>
+        </div>
+        <div class="parameter">
+          <h4><i class="fas fa-tachometer-alt"></i> Pressure</h4>
+          <p id="pressure">20 bar</p>
+        </div>
+        <div class="parameter">
+          <h4><i class="fas fa-running"></i> Flow Velocity</h4>
+          <p id="velocity">5.6 m/s</p>
+        </div>
             </div>
 
-            <div class="map">
-                <!-- Placeholder for map content -->
-                <p>Map visualization area</p>
+            <!-- Performance Parameters -->
+           <!-- Include Font Awesome for Icons -->
+<div class="parameter-group">
+    <h3>Performance Parameters</h3>
+    <div class="parameter">
+        <h4><i class="fas fa-cogs"></i> Turbine Efficiency</h4>
+        <p id="efficiency">85%</p>
+    </div>
+    <div class="parameter">
+        <h4><i class="fas fa-bolt"></i> Power Output</h4>
+        <p id="power-output">250 MW</p>
+    </div>
+    <div class="parameter">
+        <h4><i class="fas fa-tint"></i> Water Utilization</h4>
+        <p id="water-utilization">90%</p>
+    </div>
+    <div class="parameter">
+        <h4><i class="fas fa-thermometer-half"></i> Temperature</h4>
+        <p id="temperature">28°C</p>
+    </div>
+</div>
+
+        </div>
+
+        <!-- Visualization and Water Level -->
+        <div class="visualization-container">
+            <div class="visualization-area">
+                <h3>Visualization Area</h3>
+                <p>Graphical or map data will appear here.</p>
+            </div>
+            <div class="water-level-indicator">
+                <h3>Water Level Indicator</h3>
+                <div class="water-level">
+                    <div class="water"></div>
+                </div>
+                <p>Current Level: 75%</p>
             </div>
         </div>
     </div>
+
+    <script src="dash.js"></script>
 </body>
 </html>
