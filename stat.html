@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="stat.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2><span class="neon-text">HYDRO</span> STRIVE</h2>
+        <ul>
+            <li><a href="dash.html">Monitoring</a></li>
+            <li><a href="stat.html">Statistics</a></li>
+            <li><a href="records.html">Records</a></li>
+            <li><a href="index.html">STRIVAI</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <div class="user-info">
+            <p>Ministry of Jal Shakti</p>
+            <p>Admin</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="status">
+                <p>Control: TWR</p>
+                <p>Power: <span class="status-indicator"></span></p>
+                <p>05/11/2019 - 15:24 UTC</p>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-box">
+                <h2>Water Level Monitoring</h2>
+                <canvas id="chart1"></canvas>
+            </div>
+            <div class="chart-box">
+                <h2>Flow Rate Monitoring</h2>
+                <canvas id="chart2"></canvas>
+            </div>
+            <div class="chart-box">
+                <h2>Pressure Monitoring</h2>
+                <canvas id="chart3"></canvas>
+            </div>
+            <div class="chart-box">
+                <h2>Temperature Monitoring</h2>
+                <canvas id="chart4"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="stat.js"></script>
+</body>
+</html>

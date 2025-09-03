@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #ddd;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 175px;
+    background-color: #2c2626;
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.neon-text {
+    color: #ffad33; /* Light neon orange color */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+    display: block;
+    border: 2px solid #fff; /* Default white border */
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    color: #fff;
+    border: 2px solid #ffad33; /* Light neon orange border on hover */
+    box-shadow: 0 0 10px #ffad33, 0 0 20px #ffad33, 0 0 30px #ffad33; /* Neon orange glow effect */
+}
+
+/* User Info */
+.user-info {
+    position: absolute;
+    bottom: 20px;
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 200px; /* Adjust for fixed sidebar */
+    padding: 20px;
+}
+
+/* Filter Section */
+.filter-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-btn {
+    padding: 10px 15px;
+    background-color: #00cccc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.filter-btn:hover {
+    background-color: #008b8b;
+}
+
+/* Table */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+    background: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #00cccc;
+    color: #fff;
+}
+
+tbody tr:hover {
+    background-color: #333;
+}

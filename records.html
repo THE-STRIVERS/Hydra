@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="records.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h2><span class="neon-text">HYDRO</span> STRIVE</h2>
+        <ul>
+            <li><a href="dash.html">Monitoring</a></li>
+            <li><a href="stat.html">Statistics</a></li>
+            <li><a href="records.html" >Records</a></li>
+            <li><a href="index.html">STRIVAI</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+
+        <!-- User Info -->
+        <div class="user-info">
+            <p>Ministry of Jal Shakti</p>
+            <p>Admin</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Historical Records</h2>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <label for="start-date">Start Date:</label>
+                <input type="datetime-local" id="start-date">
+            </div>
+            <div class="filter-group">
+                <label for="end-date">End Date:</label>
+                <input type="datetime-local" id="end-date">
+            </div>
+            <button class="filter-btn" onclick="filterRecords()">Filter</button>
+        </div>
+
+        <!-- Records Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Record ID</th>
+                        <th>Date</th>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Unit</th>
+                    </tr>
+                </thead>
+                <tbody id="records-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="records.js"></script>
+</body>
+</html>

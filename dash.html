@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYDRO STRIVE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2><span class="neon-text">HYDRO</span> STRIVE</h2>
+        <ul>
+            <li><a href="dash.html">Monitoring</a></li>
+            <li><a href="stat.html">Statistics</a></li>
+            <li><a href="records.html">Records</a></li>
+            <li><a href="index.html">STRIVAI</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <div class="user-info">
+            <p>Ministry of Jal Shakti</p>
+            <p>Admin</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Navigation Bar -->
+        <div class="header">
+            <div class="nav">
+                <span class="status-item">Control: TWR</span>
+                <span class="status-item">Power: <span class="status-indicator"></span></span>
+                <span class="status-item">05/11/2019 - 15:24 UTC</span>
+                <div class="navbar">
+                    <button id="notification-icon" onclick="toggleNotifications()">🔔</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Bar -->
+        <div id="notification-bar" class="notification-bar"></div>
+
+        <!-- Parameter Section -->
+        <div class="parameter-section">
+            <!-- Sensor Parameters -->
+            <div class="parameter-group">
+                <h3>Sensor Parameters</h3>
+                <div class="parameter">
+                    <h4><i class="fas fa-tint"></i> Inflow Rate</h4>
+                    <p id="inflow-rate">Loading...</p>
+                </div>
+                <div class="parameter">
+                    <h4><i class="fas fa-arrow-alt-circle-right"></i> Outflow Rate</h4>
+                    <p id="outflow-rate">Loading...</p>
+                </div>
+                <div class="parameter">
+                    <h4><i class="fas fa-tachometer-alt"></i> Pressure</h4>
+                    <p id="pressure">Loading...</p>
+                </div>
+                <div class="parameter">
+                    <h4><i class="fas fa-running"></i> Flow Velocity</h4>
+                    <p id="velocity">Loading...</p>
+                </div>
+            </div>
+
+            <!-- Performance Parameters -->
+            <div class="parameter-group">
+                <h3>Performance Parameters</h3>
+                <div class="parameter">
+                    <h4><i class="fas fa-cogs"></i> Turbine Efficiency</h4>
+                    <p id="efficiency">Loading...</p>
+                </div>
+                <div class="parameter">
+                    <h4><i class="fas fa-bolt"></i> Power Output</h4>
+                    <p id="power-output">Loading...</p>
+                </div>
+                <div class="parameter">
+                    <h4><i class="fas fa-tint"></i> Water Utilization</h4>
+                    <p id="water-utilization">Loading...</p>
+                </div>
+                <div class="parameter">
+                    <h4><i class="fas fa-thermometer-half"></i> Temperature</h4>
+                    <p id="temperature">Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualization and Water Level -->
+        <div class="visualization-container">
+            <div class="visualization-area">
+                <h3>Visualization Area</h3>
+                <p>Graphical or map data will appear here.</p>
+            </div>
+            <div class="water-level-indicator">
+                <h3>Water Level Indicator</h3>
+                <div class="water-level">
+                    <div class="water"></div>
+                </div>
+                <p>Current Level: <span id="water-level">75%</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="dash.js"></script>
+</body>
+</html>

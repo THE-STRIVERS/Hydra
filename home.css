@@ -1,0 +1,359 @@
+/* Body and Background Styling */
+body {
+    background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+    margin: 0;
+    overflow-x: hidden;  /* Prevent horizontal scroll */
+    display: block;  /* Allow normal flow of content */
+    min-height: 100%;  /* Ensure body takes the full height */
+    padding-top: 100px; /* Add top padding to prevent navbar overlap */
+}
+
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2; /* Ensure navbar is above star animation */
+    background: rgba(0, 0, 0, 0.6);
+
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-orange {
+    color: #FFA500; /* Light orange color for "ST" */
+}
+
+.logo-white {
+    color: #FFFFFF; /* White color for "RIVE" */
+}
+
+/* Hero Section Layout */
+.hero-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 1px; /* To avoid overlap with navbar */
+    z-index: 2;
+    gap: 20px;
+  }
+  
+  /* Hero Section Text Content */
+  .hero-section .content {
+    color: whitesmoke;
+    max-width: 600px;
+    opacity: 0; /* Start invisible */
+    transform: translateX(-30px); /* Start slightly to the left */
+    animation: fadeInLeft 1s ease-out forwards;
+  }
+  
+  /* Text Animation */
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px); /* Initial position off-screen */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); /* Final position */
+    }
+  }
+  
+  /* Hero Section Image */
+  .hero-section .right-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    order: 2; /* Default: Image appears on the right */
+  }
+  
+  .hero-section .right-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 0px #aaa;
+    transition: all 0.5s ease;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column; /* Stack items vertically */
+    }
+  
+    .hero-section .right-image {
+      order: 1; /* Image moves above text */
+      justify-content: center;
+    }
+  
+    .hero-section .content {
+      order: 2; /* Text moves below image */
+      text-align: center; /* Center-align text for better appearance */
+    }
+  }
+  
+/* Get Started Button */
+.hero-section .get-started-btn {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px orange, 0 0 6px orange;
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+/* Neon Glow Animation */
+@keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 5px orange, 0 0 6px orange, 0 0 7px orange;
+    }
+    
+}
+
+/* Hover Effect */
+.hero-section .get-started-btn:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px white, 0 0 30px white, 0 0 50px white;
+}
+/* Features Section */
+.features-section {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    justify-content: space-between; /* Spaces features evenly */
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto; /* Adds space between hero section and features */
+    padding: 20px;
+    background-color: #1b2735; /* Matches overall theme */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    gap: 20px; /* Adds spacing between feature items */
+}
+
+/* Individual Feature */
+.features-section .feature {
+    flex: 1 1 calc(33.333% - 40px); /* Ensures three features fit in a row */
+    text-align: center;
+    color: whitesmoke;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* Adds a pointer cursor for interactivity */
+}
+
+/* Hover Effect */
+.features-section .feature:hover {
+    transform: translateY(-10px); /* Creates a lift effect */
+    background-color: #555; /* Slightly lighter background color for better contrast */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 165, 0, 0.7); /* Enhanced glowing effect */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Feature Icon */
+.features-section .feature-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+    color: orange;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.features-section .feature:hover .feature-icon {
+    color: #ffcc00; /* Change icon color on hover */
+}
+
+/* Feature Headings */
+.features-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: orange;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.features-section .feature:hover h3 {
+    color: #ffcc00; /* Change heading color on hover */
+}
+
+/* Feature Paragraph */
+.features-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.features-section .feature:hover p {
+    color: #ddd; /* Slightly lighter text color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-section {
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    }
+
+    .features-section .feature {
+        flex: 1 1 100%; /* Features take full width on small screens */
+        margin-bottom: 20px; /* Adds spacing between rows */
+    }
+}
+
+/* Stars Container */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    transform: rotate(-45deg);
+}
+
+/* Star Styling */
+.star {
+    position: absolute;
+    top: var(--top-offset, 0);
+    left: 0;
+    width: var(--star-tail-length, 6em);
+    height: var(--star-tail-height, 2px);
+    color: var(--star-color, #fff);
+    background: linear-gradient(45deg, currentColor, transparent);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px currentColor);
+    animation: fall var(--fall-duration, 9s) linear infinite,
+                tail-fade var(--fall-duration, 9s) ease-out infinite;
+}
+
+/* Generate Star Variations */
+@media screen and (max-width: 750px) {
+    .star {
+        animation: fall var(--fall-duration, 9s) linear infinite;
+    }
+}
+
+/* CSS for Random Star Properties (Equivalent to SCSS Random Loop) */
+.star:nth-child(1) { 
+    --star-tail-length: 5em; 
+    --top-offset: 10vh; 
+    --fall-duration: 8s; 
+}
+.star:nth-child(2) { 
+    --star-tail-length: 6em; 
+    --top-offset: 20vh; 
+    --fall-duration: 7s; 
+}
+.star:nth-child(3) { 
+    --star-tail-length: 7em; 
+    --top-offset: 30vh; 
+    --fall-duration: 6s; 
+}
+.star:nth-child(4) { 
+    --star-tail-length: 8em; 
+    --top-offset: 40vh; 
+    --fall-duration: 5s; 
+}
+.star:nth-child(5) { 
+    --star-tail-length: 9em; 
+    --top-offset: 50vh; 
+    --fall-duration: 4s; 
+}
+.star:nth-child(6) { 
+    --star-tail-length: 10em; 
+    --top-offset: 60vh; 
+    --fall-duration: 6s; 
+}
+
+/* Increase as Needed for More Variations */
+.star:nth-child(7) { 
+    --star-tail-length: 11em; 
+    --top-offset: 70vh; 
+    --fall-duration: 7s; 
+}
+.star:nth-child(8) { 
+    --star-tail-length: 12em; 
+    --top-offset: 80vh; 
+    --fall-duration: 8s; 
+}
+.star:nth-child(9) { 
+    --star-tail-length: 13em; 
+    --top-offset: 90vh; 
+    --fall-duration: 9s; 
+}
+.star:nth-child(10) { 
+    --star-tail-length: 14em; 
+    --top-offset: 95vh; 
+    --fall-duration: 10s; 
+}
+
+/* Keyframes for Falling Animation */
+@keyframes fall {
+    0% {
+        transform: translate3d(100vw, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100vw, 0, 0);
+    }
+}
+
+/* Keyframes for Tail Fading Effect */
+@keyframes tail-fade {
+    0%, 50% {
+        width: var(--star-tail-length);
+        opacity: 1;
+    }
+    70%, 80% {
+        width: 0;
+        opacity: 0.4;
+    }
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+/* Star Blinking Effect */
+.star::before, .star::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: calc(var(--star-width, 1em) / -2);
+    width: var(--star-width, 0.5em);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+}
+
+.star::before {
+    transform: rotate(45deg);
+}
+
+.star::after {
+    transform: rotate(-45deg);
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.6;
+    }
+} 
