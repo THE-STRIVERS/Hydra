@@ -1,69 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Striver</title>
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-<link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydro Predictor</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #0d1117;
+    color: #00ffff;
+    
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 175px;
+    background-color: #2c2626;
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.neon-text {
+    color: #ffad33; /* Light neon orange color */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+    display: block;
+    border: 2px solid #00ffff; /* Default white border */
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    color: #fff;
+    border: 2px solid #ffad33; /* Light neon orange border on hover */
+    box-shadow: 0 0 10px #ffad33, 0 0 20px #ffad33, 0 0 30px #ffad33; /* Neon orange glow effect */
+}
+
+/* User Info */
+.user-info {
+    position: absolute;
+    bottom: 20px;
+    font-size: 14px;
+}
+
+
+/* Main Content Area */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+        h1 {
+            color: #00f7ff; /* Neon Blue */
+        }
+        label {
+            color: #39ff14; /* Neon Green */
+            font-size: 18px;
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="number"],
+        input[type="text"] {
+            background-color: #2a2a2a;
+            border: 2px solid #f50057; /* Neon Pink */
+            color: #fff;
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+            margin: 5px;
+        }
+        button {
+            background-color: #ff4c00; /* Neon Orange */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff9b00; /* Neon Yellow */
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff39d7; /* Neon Pink */
+        }
+    </style>
 </head>
 <body>
-    <!-- Star Container -->
-    <div class="stars">
-        <!-- Creating 10 stars based on your CSS setup -->
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+    <div class="sidebar">
+        <h2><span class="neon-text">HYDRO</span> STRIVE</h2>
+        <ul>
+            <li><a href="dash.html">Monitoring</a></li>
+            <li><a href="stat.html">Statistics</a></li>
+            <li><a href="records.html">Records</a></li>
+            <li><a href="index1.html">STRIVAI</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <div class="user-info">
+            <p>Ministry of Jal Shakti</p>
+            <p>Admin</p>
+        </div>
     </div>
-    <!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="logo">
-        <span class="logo-orange">ST</span><span class="logo-white">RIVER</span>
-    </div>
-</nav>
 
-    <!-- Main Content with Image -->
-<section class="hero-section">
-    <div class="content">
-        <h1 >Welcome to Hydraulic Transient Analysis System</h1>
-        <p>To revolutionize the analysis and management of hydraulic transients by delivering a cutting-edge solution that predicts and mitigates risks under varying operational conditions.   </p>
-        <a href="dash.html">
-            <button class="get-started-btn">Get Started</button>
-        </a>
-    </div>
-    <div class="right-image">
-        <img src="dam1.png" alt="Right Side Image">
-    
-    </div>
-    
-</section>
-    <section class="features-section">
-        <div class="feature">
-          <i class="feature-icon fas fa-chart-line"></i> 
-          <h3>Accurate Prediction</h3>
-          <p>Represents trends and reliable forecasting.
-        </p>
+    <div class="main-content">
+        <div class="header">
+            <div class="status">
+                <p>Control: TWR</p>
+                <p>Power: <span class="status-indicator"></span></p>
+                <p>05/11/2019 - 15:24 UTC</p>
+            </div>
         </div>
-        <div class="feature">
-            <i class="feature-icon fas fa-cogs"></i>
-          <h3>CFD Integration</h3>
-          <p>computational processes.</p>
-        </div>
-        <div class="feature">
-            <i class="feature-icon fas fa-eye"></i>
-          <h3>Visual Representation</h3>
-          <p>Denotes clarity and visualization.</p>
-        </div>
-      </section>
+    <h1>Hydro Prediction Form</h1>
+    <form id="predictForm">
+        <label>Pressure: <input type="number" id="pressure" required></label>
+        <label>Speed: <input type="number" id="speed" required></label>
+        <label>Volume: <input type="number" id="volume" required></label>
+        <label>Velocity: <input type="number" id="velocity" required></label>
+        <label>Direction: <input type="text" id="direction" required></label>
+        <label>Temperature: <input type="number" id="temperature" required></label>
+        <button type="button" onclick="sendData()">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function sendData() {
+            const data = {
+                pressure: document.getElementById('pressure').value,
+                speed: document.getElementById('speed').value,
+                volume: document.getElementById('volume').value,
+                velocity: document.getElementById('velocity').value,
+                direction: document.getElementById('direction').value,
+                temperature: document.getElementById('temperature').value
+            };
+
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.error) {
+                    document.getElementById('result').innerText = `Error: ${result.error}`;
+                } else {
+                    document.getElementById('result').innerText = `Prediction: ${result.prediction}`;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
 </html>
